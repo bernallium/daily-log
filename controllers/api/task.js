@@ -37,7 +37,7 @@ function create(req, res) {
 
 // Update a task
 function update(req, res) {
-    Task.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(updatedTask => {
+    Task.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true }).then(updatedTask => {
         res.status(200).json(updatedTask);
     }).catch(err => {
         res.status(400).json(err);

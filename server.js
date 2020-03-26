@@ -10,7 +10,7 @@ require('./config/database');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const apiRouter = require('./routes/api/task')
+const apiRouter = require('./routes/api')
 
 const app = express();
 
