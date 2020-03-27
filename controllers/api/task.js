@@ -17,10 +17,10 @@ function index(req, res) {
     });
 }
 
-// Get a single task
+// Get a specific task
 function show(req, res) {
-    Task.findById(req.params.id).then(singleTask => {
-        res.status(200).json(singleTask);
+    Task.findById(req.params.id).then(task => {
+        res.status(200).json(task);
     }).catch(err => {
         res.status(400).json(err);
     });
@@ -37,7 +37,7 @@ function create(req, res) {
 
 // Update a task
 function update(req, res) {
-    Task.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true }).then(updatedTask => {
+    Task.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true}).then(updatedTask => {
         res.status(200).json(updatedTask);
     }).catch(err => {
         res.status(400).json(err);
@@ -52,3 +52,5 @@ function deleteOne(req, res) {
         res.status(400).json(err);
     })
 }
+
+

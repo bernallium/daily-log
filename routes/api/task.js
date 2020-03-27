@@ -5,8 +5,8 @@ const taskCtrlr = require('../../controllers/api/task');
 
 router.get('/', taskCtrlr.index); // Get all tasks
 router.post('/', taskCtrlr.create); // Create a task
-router.get('/:id', taskCtrlr.show); // Get a single task
-router.put('/:id', taskCtrlr.update); // Update a task
-router.delete('/:id', taskCtrlr.delete); // Delete a task
+router.get('/:id', taskCtrlr.show); // Get this task
+router.put('/:id', taskCtrlr.update); // Update this task
+router.delete('/:id', taskCtrlr.delete); // Delete this task
 
 module.exports = router;

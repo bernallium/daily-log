@@ -3,10 +3,10 @@ const router = express.Router();
 
 const taskRouter = require('./task');
 const noteRouter = require('./note');
-//const dayRouter = require('./day');
+const dayRouter = require('./day');
 
-router.use('/task', taskRouter);
-router.use('/note', noteRouter);
-//router.use('/day', dayRouter);
+router.use('/tasks', taskRouter);
+router.use('/notes', noteRouter);
+router.use('/days', dayRouter);
 
 module.exports = router;

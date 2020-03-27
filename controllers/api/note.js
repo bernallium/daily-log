@@ -17,7 +17,7 @@ function index(req, res) {
     });
 }
 
-// Get a single note
+// Get a specific note
 function show(req, res) {
     Note.findById(req.params.id).then(singleNote => {
         res.status(200).json(singleNote);
@@ -37,7 +37,7 @@ function create(req, res) {
 
 // Update a note
 function update(req, res) {
-    Note.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true }).then(updatedNote => {
+    Note.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true}).then(updatedNote => {
         res.status(200).json(updatedNote);
     }).catch(err => {
         res.status(400).json(err);
