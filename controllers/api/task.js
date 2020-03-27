@@ -1,11 +1,13 @@
 const Task = require('../../models/task');
+const Day = require('../../models/day');
 
 module.exports = {
     index,
     create,
     show,
     update,
-    delete: deleteOne
+    delete: deleteOne,
+    addToDay
 };
 
 // Get all tasks
@@ -53,4 +55,14 @@ function deleteOne(req, res) {
     })
 }
 
-
+async function addToDay(req, res) {
+    try {
+        const task = await (await Task.create(req.body)).populate('tasks');
+        const day = await (await Day.findById(req.params.dayId)).populate('tasks');
+        day.tasks.push(json(task));
+        day.populate('tasks');
+        res.status(200).json(task);
+    } catch(err) {
+        res.status(400).json(err);
+    }
+}

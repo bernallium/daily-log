@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const taskRouter = require('./task');
-const noteRouter = require('./note');
 const dayRouter = require('./day');
+//const noteRouter = require('./note');
+const taskRouter = require('./task');
 
-router.use('/tasks', taskRouter);
-router.use('/notes', noteRouter);
 router.use('/days', dayRouter);
+// router.use('/notes', noteRouter);
+router.use('/', taskRouter);
 
 module.exports = router;

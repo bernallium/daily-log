@@ -19,7 +19,7 @@ module.exports = {
 
 // Get all days
 function index(req, res) {
-    Day.find({}).then(allDays => {
+    Day.find({}).populate('tasks').then(allDays => {
         res.status(200).json(allDays);
     }).catch(err => {
         res.status(400).json(err);
@@ -28,7 +28,7 @@ function index(req, res) {
 
 // Get a specific day
 function show(req, res) {
-    Day.findById(req.params.id).then(day => {
+    Day.findById(req.params.id).populate('tasks').then(day => {
         res.status(200).json(day);
     }).catch(err => {
         res.status(400).json(err);
@@ -37,7 +37,7 @@ function show(req, res) {
 
 // Create a day
 function create(req, res) {
-    Day.create(req.body).then(createdDay => {
+    Day.create(req.body).populate('tasks').then(createdDay => {
         res.status(201).json(createdDay);
     }).catch(err => {
         res.status(400).json(err);
@@ -46,7 +46,8 @@ function create(req, res) {
 
 // Update a day
 function update(req, res) {
-    Day.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true}).then(updatedDay => {
+    Day.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true})
+    .populate('tasks').then(updatedDay => {
         res.status(200).json(updatedDay);
     }).catch(err => {
         res.status(400).json(err);
@@ -69,7 +70,7 @@ function deleteDay(req, res) {
 // Get all notes from this day
 function indexNote(req, res) {
     Day.findById(req.params.dayId).then(day => {
-        res.status(201).json(day.notes);
+        res.status(200).json(day.notes);
     }).catch(err => {
         res.status(400).json(err);
     });
@@ -79,7 +80,7 @@ function indexNote(req, res) {
 function showNote(req, res) {
     Day.findById(req.params.dayId).then(day => {
         const noteToShow = day.notes.id(req.params.id);
-        res.status(201).json(noteToShow);
+        res.status(200).json(noteToShow);
     }).catch(err => {
         res.status(400).json(err);
     });

@@ -3,6 +3,38 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.post {
+  width: 80px;
+  color: whitesmoke;
+  background-color: rgb(63, 194, 122);
+  border-radius: 2px;
+  text-align: center;
+  padding: 5px;
+}
+
+.get {
+  width: 80px;
+  color: whitesmoke;
+  background-color: rgb(73, 149, 236);
+  border-radius: 2px;
+  text-align: center;
+  padding: 5px;
+}
+
+.put {
+  width: 80px;
+  color: whitesmoke;
+  background-color: orange;
+  border-radius: 2px;
+  text-align: center;
+  padding: 5px;
+}
+
+.delete {
+  width: 80px;
+  color: whitesmoke;
+  background-color: indianred;
+  border-radius: 2px;
+  text-align: center;
+  padding: 5px;
 }

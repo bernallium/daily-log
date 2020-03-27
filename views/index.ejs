@@ -5,8 +5,96 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %> - Daily Log App</h1>
-    <p>Welcome to <%= title %></p>
-    <h2>API Docuemntation</h2>
+    <h1>Daily Log App</h1>
+    <h2>day</h2>
+    <table style="width:40%">
+      <tr>
+        <td class="post">POST</td>
+        <td>/api/days</td>
+        <td>Create a day</td>
+      </tr>
+      <tr>
+        <td class="get">GET</td>
+        <td>/api/days</td>
+        <td>Get all days</td>
+      </tr>
+      <tr>
+        <td class="get">GET</td>
+        <td>/api/days/{dayId}</td>
+        <td>Get a specific day</td>
+      </tr>
+      <tr>
+        <td class="put">PUT</td>
+        <td>/api/days/{dayId}</td>
+        <td>Update a day</td>
+      </tr>
+      <tr>
+        <td class="put">DELETE</td>
+        <td>/api/days/{dayId}</td>
+        <td>Delete specified day</td>
+      </tr>
+    </table>
+    <h2>note</h2>
+    <table style="width:40%">
+      <tr>
+        <td class="post">POST</td>
+        <td>/api/days/{dayId}/notes</td>
+        <td>Create a note for this day</td>
+      </tr>
+      <tr>
+        <td class="get">GET</td>
+        <td>/api/days/{dayId}/notes</td>
+        <td>Get all notes from this day</td>
+      </tr>
+      <tr>
+        <td class="get">GET</td>
+        <td>/api/days/{dayId}/notes/{noteId}</td>
+        <td>Get a specific note from this day</td>
+      </tr>
+      <tr>
+        <td class="put">PUT</td>
+        <td>/api/days/{dayId}/notes/{noteId}</td>
+        <td>Update a note for from this day</td>
+      </tr>
+      <tr>
+        <td class="delete">DELETE</td>
+        <td>/api/days/{dayId}/notes/{noteId}</td>
+        <td>Delete a note from this day</td>
+      </tr>
+    </table>
+    <h2>task</h2>
+    <table style="width:40%">
+      <tr>
+        <td class="post">POST</td>
+        <td>/api/tasks</td>
+        <td>Create a task</td>
+      </tr>
+      <tr>
+        <td class="get">GET</td>
+        <td>/api/tasks</td>
+        <td>Get all tasks</td>
+      </tr>
+      <tr>
+        <td class="get">GET</td>
+        <td>/api/tasks/{taskId}</td>
+        <td>Get a specific task</td>
+      </tr>
+      <tr>
+        <td class="put">PUT</td>
+        <td>/api/tasks/{taskId}</td>
+        <td>Update a task</td>
+      </tr>
+      <tr>
+        <td class="delete">DELETE</td>
+        <td>/api/tasks/{taskId}</td>
+        <td>Delete specified task</td>
+      </tr>
+      <tr>
+        <td class="post">POST</td>
+        <td>/api/days/{daysId}/tasks</td>
+        <td>Add a task to this day</td>
+      </tr>
+    </table>
+    <img src="/images/daily-log-erd.png">
   </body>
 </html>
